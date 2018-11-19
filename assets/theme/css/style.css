@@ -3,13 +3,17 @@
  * Copyright 2017 Mobirise
  */
 section {
-  background-color: #eeeeee; }
+/*  background-color: #eeeeee; */
+
+background-color: #ffffff;
+}
 
 section,
 .container,
 .container-fluid {
   position: relative;
   word-wrap: break-word; }
+
 
 a.mbr-iconfont:hover {
   text-decoration: none; }
@@ -253,6 +257,7 @@ nav .mbr-section-btn {
 [type="submit"] {
   -webkit-appearance: none; }
 
+
 /*! Full-screen */
 .mbr-fullscreen .mbr-overlay {
   min-height: 100vh; }
@@ -284,6 +289,10 @@ nav .mbr-section-btn {
   top: -2px;
   font-weight: normal; }
 
+.row{
+text-align: center;
+
+}
 /*! Scroll to top arrow */
 .mbr-arrow-up {
   bottom: 25px;
@@ -429,4 +438,76 @@ nav .mbr-section-btn {
 	padding: 0;
 	top: 0;
 	left: -2400px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+div.scrollmenu {
+  background-color: #eeeeee;
+    border-radius: 5px;
+  border-color:  #ff3838 !important;
+  border-width: thin;
+    padding: 10px;
+    margin: 4px;
+/*    background-color: #333;*/
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #ffffff;
+}
+
+
+div.scrollmenu a:active {
+    background-color: red;
+}
+.column{
+
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: white;
+  padding: 14px;
+  background-color: white;
+}
+
+
+.col.custom-col{
+  margin : 5px;
+  border-radius: 5px;
+  border-color: #ffffff;
+  color: black;
+  padding: 10px;
+  background-color: #eeeeee;
 }

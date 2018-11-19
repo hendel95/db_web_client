@@ -306,6 +306,8 @@ body {
   background-color: #0d0d0d !important;
   border-color: #0d0d0d !important;
 }
+
+
 .btn-primary-outline,
 .btn-primary-outline:active {
   background: none;
@@ -326,6 +328,7 @@ body {
   background-color: #ff3838 !important;
   border-color: #ff3838 !important;
 }
+
 .btn-secondary-outline,
 .btn-secondary-outline:active {
   background: none;
@@ -727,6 +730,8 @@ pre {
 .mbr-form .input-group-btn button[type="submit"]:hover {
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
 }
+
+
 .form2 .form-control {
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
