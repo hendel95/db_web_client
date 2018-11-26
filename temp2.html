@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <title>테스트 페이지</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script><!-- 최신버전 제이쿼리 -->
+
+<body>
+  <table cellpadding='2' cellspacing='0' border="1" width="500">
+    <thead>
+      <tr>
+        <th>상품명</th>
+        <th>가격</th>
+        <th>개수</th>
+        <th>합계</th>
+        <th><input type="button" value="추가" id="itemAdd"/></th>
+      </tr>
+    </thead>
+    <tbody id="AddOption"> </tbody>
+  </table>
+  <script type="text/javascript">
+    $('#itemAdd').click(function() {
+      //alert("aa");
+      var contents = '';
+      contents += '<tr>';
+      contents += '<td><input type="text" name="item_name" /></td>';
+      contents += '<td><input type="text" name="price" class="price" /></td>';
+      contents += '<td><input type="text" name="qty" class="qty" /></td>';
+      contents += '<td><input type="text" name="sumPrice" class="sumPrice" /></td>';
+      contents += '<td><input type="button" name="delRow" class="delRow" value=" X " /></td>';
+      contents += '</tr>';
+      $('#AddOption').append(contents); // 추가기능
+      $('.delRow').click(function() {
+        // 삭제기능
+        $(this).parent().parent().remove();
+        //alert("aaa"); });
+        $('.price, .qty, .sumPrice').keyup(function() {
+          $(this).val($(this).val().replace(/[^0-9]/gi, ""));
+          //숫자만 입력가능
+        });
+        $('.price').keyup(function() {
+          var num = $(".price").index(this);
+          $('.sumPrice').eq(num).val($('.price').eq(num).val() * $('.qty').eq(num).val());
+        });
+        $('.qty').keyup(function() {
+          var num = $(".qty").index(this);
+          $('.sumPrice').eq(num).val($('.price').eq(num).val() * $('.qty').eq(num).val());
+        });
+        $('.sumPrice').keyup(function() {
+          var num = $(".sumPrice").index(this);
+          $('.sumPrice').eq(num).val($('.price').eq(num).val() * $('.qty').eq(num).val());
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

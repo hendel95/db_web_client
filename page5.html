@@ -96,144 +96,69 @@ tbody{
       <div class="form-container">
 
         <div class="container  align-center">
-          <table class="floating-thead" width="100%">
+          <form name="form" method="post">
+          <table class="table-hover text-center" id="order_table" width="100%">
             <thead>
               <th col-lg-1>순번</th>
               <th col-lg-5>메뉴</th>
               <th col-lg-2>수량</th>
               <th col-lg-4>가격</th>
+
             </thead>
 
             <tbody>
+              <!--
               <tr>
                 <td>1</td>
                 <td>아메리카노</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>8000원</td>
+                <td>3</td>
+                <td><input id="sub_total1" type="text" value="5000" size="10">원</td>
               </tr>
 
               <tr>
                 <td>2</td>
                 <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
+                <td>1</td>
+                <td><input id="sub_total2" type="text" value="5000" size="10">원</td>
               </tr>
+-->
+              <!--
               <tr>
                 <td>2</td>
                 <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
+                <td>1</td>
+                <td><input id="sub_total2" type="text" value="5000" size="10">원</td>
+              </tr>-->
 
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-
-
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>딸기스무디</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>5000원</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>캐모마일</td>
-                <td><button>-</button>2<button>+</button></td>
-                <td>6000원</td>
-              </tr>
             </tbody>
           </table>
 
 
         </div>
-        <div class="row container">
-          <button class="btn-md">주문합계</button>
-          <button class="btn-md">13000원</button>
+        <div class="row">
+          <button class="btn-sm btn-primary-outline" id="deleteSelected">항목삭제</button>
+          <button class="btn-sm btn-primary-outline" id="deleteAll">전체삭제</button>
+          <button class="btn-sm btn-primary-outline" id="addItem">항목추가</button>
+
         </div>
-        <div class="row container">
-          <button class="btn-lg btn-primary-outline" type="submit">현금</button>
+        <div class="row container align-center">
+          <input type="button" id="click_btn" class="btn-sm btn-primary-outline" value="주문합계" />
+        <!--  <input id="total_order" value="0" readonly>-->
+          <h2><input id="total_order" type="text" value="0" size ="10">원</h2>
+        </div>
+        <div class="row container algin-center">
+          <button class="btn-lg btn-primary-outline" onclick="sum_of_all_menus()">현금</button>
           <button class="btn-lg btn-primary-outline" type="submit">카드</button>
         </div>
-
+</form>
 
       </div>
 
+
+
     </div>
+
+
 
     <div class="container col-md-8">
 
@@ -516,7 +441,49 @@ tbody{
 
           </div>
         </div>
-        <div id="menu2" class="container tab-pane fade"></div>
+        <div id="menu2" class="container tab-pane fade">
+          <div class="row">
+              <table id="example-table-1" width="100%" class="table table-bordered table-hover text-center">
+                <thead>
+                  <tr>
+                    <th>No. </th>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>이메일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>user01</td>
+                    <td>홍길동</td>
+                    <td>hong@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>user02</td>
+                    <td>김사부</td>
+                    <td>kim@naver.com</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>user03</td>
+                    <td>존</td>
+                    <td>John@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>user04</td>
+                    <td>홍</td>
+                    <td>Hongsi@gmail.com</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="col-lg-12" id="ex1_Result1"></div>
+              <div class="col-lg-12" id="ex1_Result2" ></div>
+            </div>
+        </div>
         <div id="menu3" class="container tab-pane fade"></div>
       </div>
     </div>
@@ -590,8 +557,35 @@ tbody{
         </div>
 </div></section>
 -->
-
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
+<script>
+
+$("#order_table tr").click(function() {
+
+  var tr = $(this);
+  var td = tr.children();
+  $("#deleteSelected").click(function() {
+    // 삭제기능
+    //$(this).parent().parent().remove();
+    tr.remove();
+  });
+});
+
+$('#deleteAll').click( function() {
+     $( '#order_table> tbody').empty();
+  });
+  $('#addItem').click( function() {
+    $('#order_table > tbody:last').append('<tr><td>2</td><td>딸기스무디</td><td>1</td><td>3</td></tr>');
+    });
+/*
+$("#deleteAll").click(function() {
+   var time = new Date().toLocaleTimeString();
+   $('#order_table > tbody:last').append('<tr><td>2</td><td>딸기스무디</td><td>1</td><td><input id="sub_total3" type="text" value="5000" size="10">원</td>
+     </tr>');
+ });*/
+</script>
+
+
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -600,6 +594,7 @@ tbody{
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/as-pie-progress/jquery-as-pie-progress.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  <!--<script src="assets/custom/js/custom.js"></script>-->
 
 
 </body>
