@@ -27,3 +27,53 @@ th:nth-of-type(4), td:nth-of-type(4) { width:150px; }/*합계*/
 
 margin: 5px;
 }
+
+
+.sidenav {
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+/*    background-color: #000000;*/
+
+    overflow-x: hidden;
+  /*  padding-top: 100px;*/
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ff3838;
+
+    display: block;
+    font-style: bold;
+}
+/*
+.sidenav a:hover {
+    color: #f1f1f1;
+}*/
+/*
+.sidnav a:active {
+  background-color: #ff3838 !important;
+  border-color: #ff3838 !important;
+  color: #ffffff !important;
+}*/
+
+.sidnav a:active,
+.sidenav a:hover {
+  color: #ffffff !important;
+  background-color: #eb0000 !important;
+  border-color: #eb0000 !important;
+}
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
